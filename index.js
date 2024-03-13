@@ -51,7 +51,7 @@ app.use(mongoSanitize({
   
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
-  
+app.set("trust proxy", 1); 
 const store= MongoStore.create({
     mongoUrl:dbURL,
     touchAfter:24*60*60,
