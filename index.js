@@ -10,15 +10,10 @@ if(process.env.NODE_ENV !=="production"){
 const express=require("express");
 const path=require("path");
 const mongoose=require("mongoose")
-const campground=require('./models/campground');
 const methodOveride=require('method-override');
 const ejsMate=require("ejs-mate");
-const CatchAsync=require("./utilities/CatchAsync");
 const ExpressError=require("./utilities/ExpressError")
-const Joi=require("joi");
 const session=require("express-session");
-const { campgroundSchema,reviewSchema }=require('./schema.js');
-const Review=require("./models/review.js");
 const flash=require("connect-flash");
 const campgroundsRoute=require("./routes/campgrounds");
 const reviewRoute=require("./routes/review");
@@ -32,10 +27,10 @@ const helmet=require("helmet");
 const MongoStore = require('connect-mongo');
 
 
-// const dbURL=process.env.DB_URL ;  for later
-const tempUrl='mongodb://127.0.0.1:27017/yelp-camp';
+const dbURL=process.env.DB_URL ;  
+// const tempUrl='mongodb://127.0.0.1:27017/yelp-camp';
 
-mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp' ,{ useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(dbURL ,{ useNewUrlParser: true, useUnifiedTopology: true})
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -58,7 +53,7 @@ app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
   
 const store= MongoStore.create({
-    mongoUrl:tempUrl,
+    mongoUrl:dbURL,
     touchAfter:24*60*60,
     crypto: {
         secret:"thisIsASecret"
@@ -77,7 +72,7 @@ const sessionConfig = {
       saveUninitialized: true,
       cookie: {
           HttpOnly:true,
-          // secure:true,
+          secure:true,
           expires:Date.now()+ 1000 * 60 * 60 * 24 * 7,
           maxAge:1000 * 60 * 60 * 24 * 7
         }
