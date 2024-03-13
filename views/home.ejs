@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <link rel="stylesheet" href="/stylesheet/home.css">   
+
+</head>
+
+  <body >
+      
+      <div class="hero_section">
+          
+          <h1>Wild Wanderers</h1>
+          <nav class="nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="/campgrounds">Campground</a>
+              <% if(!currentUser) {%>
+              <a class="nav-link" href="/login">Login</a>
+              <a class="nav-link "  href="/register" >Register</a>
+            <% } else {%>  
+                <a class="nav-link" href="/logout">Logout</a>
+                <% } %>
+             
+            </nav>
+            
+            
+        </div> 
+        
+        
+        
+        <main class="px-3 middle">
+                <div class="middle">
+
+                    <h3><b>Welcome Adventurers </b> </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nulla ut, repellendus iste pariatur voluptatem veritatis beatae soluta nesciunt culpa laudantium corporis quaerat ex aut dicta facere, minus, accusantium quis.
+                        Minima ab maiores, eos corporis autem impedit porro libero quis animi. Fugiat dolorem accusamus, facere fugit eligendi suscipit ratione natus aperiam autem vero reiciendis libero error earum ex doloribus laborum!
+                        Maxime ipsa neque amet nihil dolore dolorum iusto esse eos quisquam laboriosam eveniet repellat, a repudiandae, quas consectetur consequuntur fuga vero eaque! Eius voluptas tempora officiis veniam perferendis ipsam vero.
+                        Earum explicabo tempore deserunt voluptas ipsam, incidunt in ad numquam illo voluptate enim? Doloribus, hic mollitia! Repellat quibusdam officia velit tenetur! Corporis dignissimos, voluptatem eligendi ut itaque eaque reiciendis iste!
+                        Ex tenetur recusandae iure, commodi esse dolorum quidem nam quas beatae dicta, dolore, repellat hic quos voluptas earum dignissimos. Fugit at repudiandae omnis, exercitationem ut placeat. Quaerat quae accusantium libero!
+                        !</p>
+                        
+
+
+                    </div>
+
+       </main>        
+
+
+
+       <footer class="bottom_part">
+        <p>&copy; 2024 <span class="reserved"> All Rights are reserved</span></p>
+    </footer>
+
+
+
+
+
+
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
