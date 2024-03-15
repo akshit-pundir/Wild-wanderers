@@ -136,12 +136,11 @@
 
 </div>
 
-<script>
-  const mapToken='<%-process.env.MAPBOX_TOKEN %>';
-  let result='<%- JSON.stringify(camps) %>';
-  result=JSON.parse(result);
-</script>
-
+  <script>
+      const mapToken='<%-process.env.MAPBOX_TOKEN %>';
+      let result={features:JSON.parse( '<%- JSON.stringify(camps) %>') };
+      // result=JSON.parse(result);
+    </script>
 
 <script src="/javascript/ShowPageMap.js"></script>
 
