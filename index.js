@@ -51,7 +51,7 @@ app.use(mongoSanitize({
   
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
-app.set("trust proxy", 1); 
+ 
 const store= MongoStore.create({
     mongoUrl:dbURL,
     touchAfter:24*60*60,
@@ -72,7 +72,7 @@ const sessionConfig = {
       saveUninitialized: true,
       cookie: {
           HttpOnly:true,
-          secure:true,
+          // secure:true,
           expires:Date.now()+ 1000 * 60 * 60 * 24 * 7,
           maxAge:1000 * 60 * 60 * 24 * 7
         }
